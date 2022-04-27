@@ -1,0 +1,19 @@
+{
+    "name": "user/curso_poo_2",
+    "autoload": {
+        "psr-4": {
+           "User\\CursoPoo\\": "app/",
+            "app\\": "app/"
+        },
+        "files": [
+            "helpers/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Jonas Ferreira",
+            "email": "suporte@yesflex.com.br"
+        }
+    ],
+    "require": {}
+}
