@@ -2,35 +2,59 @@
 
 declare(strict_types=1);
 
+
 header('Content-type:application/json');
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use app\classes\Person;
+class User
+{
+    public function __construct(public string $name, public int $age)
+    {
+        $this->name = $name;
+        $this->age = $age;
+    }
 
+    public function getUserInfo()
+    {
+        return $this->name . ' ' . $this->age;
+    }
+}
 
-$person = new Person('Jonas', 'suporte@yesflex.com.br');
-echo $person->info();
+class User2 extends User
+{
+    public function __construct(string $name, int $age)
+    {
+        parent::__construct($name, $age);
+    }
+}
+
+$user = new User2('Jonas Ferreira', 30);
+echo $user->getUserInfo();
+
+// use app\classes\User;
+// $user = new User;
+// echo $user->info();
+
+// use app\classes\Person;
+// $person = new Person('Jonas', 'suporte@yesflex.com.br');
+// echo $person->info();
 
 // use app\models\Product;
 // use app\models\User;
-
 // $user = new User;
 // echo $user->all();
-
 // $product = new Product;
 // echo $product->all();
 
 // use app\classes\Abajur;
 // use app\classes\book;
-
 // $book = new book;
 // $book->name = 'Meu Livro';
 // $book->description = 'Cupidatat nulla tempor tempor esse anim dolor aute id sit laboris.';
 // $book->pages = 300;
 // $book->author = 'Consequat adipisicing exercitation';
 // echo json_encode($book);
-
 // $abajur = new Abajur;
 // $abajur->name = 'Abajur';
 // $abajur->description = 'Laborum est tempor non ex ut ut ea.';
@@ -40,7 +64,6 @@ echo $person->info();
 
 // use app\classes\Crud;
 // use app\classes\Login;
-
 // try {
 //     $login = new Login;
 //     echo $login->auth(new Crud);
