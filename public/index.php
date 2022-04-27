@@ -6,14 +6,20 @@ header('Content-type:application/json');
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use app\models\Product;
-use app\models\User;
+use app\classes\Person;
 
-$user = new User;
-echo $user->all();
 
-$product = new Product;
-echo $product->all();
+$person = new Person('Jonas', 'suporte@yesflex.com.br');
+echo $person->info();
+
+// use app\models\Product;
+// use app\models\User;
+
+// $user = new User;
+// echo $user->all();
+
+// $product = new Product;
+// echo $product->all();
 
 // use app\classes\Abajur;
 // use app\classes\book;

@@ -7,5 +7,15 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'app\\classes\\Abajur' => $baseDir . '/app/classes/Abajur.php',
+    'app\\classes\\Crud' => $baseDir . '/app/classes/Crud.php',
+    'app\\classes\\Login' => $baseDir . '/app/classes/Login.php',
+    'app\\classes\\Person' => $baseDir . '/app/classes/Person.php',
+    'app\\classes\\Product' => $baseDir . '/app/classes/Product.php',
+    'app\\classes\\Teste' => $baseDir . '/app/classes/Teste.php',
     'app\\classes\\User' => $baseDir . '/app/classes/User.php',
+    'app\\classes\\book' => $baseDir . '/app/classes/book.php',
+    'app\\models\\Model' => $baseDir . '/app/models/Model.php',
+    'app\\models\\Product' => $baseDir . '/app/models/Product.php',
+    'app\\models\\User' => $baseDir . '/app/models/User.php',
 );
