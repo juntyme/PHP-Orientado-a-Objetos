@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+date_default_timezone_set('America/Sao_Paulo');
+setlocale(LC_TIME, 'pt_BR', 'pt_BR.uft-8', 'portuguese');
 
 header('Content-type:application/json');
 
@@ -9,28 +11,44 @@ require __DIR__ . '/../vendor/autoload.php';
 
 class User
 {
-    public function __construct(public string $name, public int $age)
-    {
-        $this->name = $name;
-        $this->age = $age;
-    }
+    public static string $name;
 
-    public function getUserInfo()
+    public static function userInfo()
     {
-        return $this->name . ' ' . $this->age;
+        return 'Teste método estático' . self::$name;
     }
 }
+User::$name = 'Jonas Ferreira';
+// echo User::userInfo();
 
-class User2 extends User
-{
-    public function __construct(string $name, int $age)
-    {
-        parent::__construct($name, $age);
-    }
-}
+$className = 'User';
+echo $className::userInfo();
 
-$user = new User2('Jonas Ferreira', 30);
-echo $user->getUserInfo();
+
+// class User
+// {
+//     public function __construct(public string $name, public int $age)
+//     {
+//         $this->name = $name;
+//         $this->age = $age;
+//     }
+
+//     public function getUserInfo()
+//     {
+//         return $this->name . ' ' . $this->age;
+//     }
+// }
+
+// class User2 extends User
+// {
+//     public function __construct(string $name, int $age)
+//     {
+//         parent::__construct($name, $age);
+//     }
+// }
+
+// $user = new User2('Jonas Ferreira', 30);
+// echo $user->getUserInfo();
 
 // use app\classes\User;
 // $user = new User;
